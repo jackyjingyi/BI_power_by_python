@@ -1,3 +1,5 @@
+
+## this script actually do a sumifs job in excel
 import openpyxl
 import string
 from openpyxl import Workbook
@@ -8,9 +10,9 @@ from openpyxl.utils import coordinate_from_string,column_index_from_string
 
 # assume number greater than 0
 
-loc = '/Users/yanjingy/Documents/work/Todayswork/Auto Consolidated Tracker.xlsx'
+loc = '/you file location'
 wb = openpyxl.load_workbook(loc)
-#dest_filename = 'Auto Consolidated Tracker.xlsx'
+
 Tracker = wb['Tracker']
 spec = wb['Spec Level']
 a_list = []
