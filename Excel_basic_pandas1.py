@@ -48,4 +48,3 @@ writer.sheets = {ws.title: ws for ws in book.worksheets}
 for sheetname in writer.sheets:
     df1.to_excel(writer,sheet_name=sheetname, startrow=writer.sheets[sheetname].max_row, index = False,header= False)
 
-writer.save()
