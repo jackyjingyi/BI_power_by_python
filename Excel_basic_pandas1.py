@@ -39,4 +39,13 @@ with pd.ExcelWriter(output_loc) as writer:
     new_spec.to_excel(writer, startrow=writer.sheets['Sheet1'].max_row,
                       startcol=1,index=False)
     writer.save()
-    
+
+ ## reference from https://stackoverflow.com/questions/47737220/append-dataframe-to-excel-with-pandas
+ ## undate multiple worksheets
+
+writer.sheets = {ws.title: ws for ws in book.worksheets}
+
+for sheetname in writer.sheets:
+    df1.to_excel(writer,sheet_name=sheetname, startrow=writer.sheets[sheetname].max_row, index = False,header= False)
+
+writer.save()
