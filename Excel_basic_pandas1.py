@@ -7,6 +7,7 @@ import openpyxl
 location = '/Users/yanjingy/Documents/work/Todayswork/Auto Consolidated Tracker-1 v2.xlsx'
 sheetname = 'Spec Level'
 
+# pull data from specific columns, include header 
 spec = pd.read_excel(location,sheetname,header = 0,
               index_col= None,usecols="A,B,D,H,I,L"
               )
