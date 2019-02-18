@@ -7,6 +7,7 @@ import openpyxl
 location = '/Users/yanjingy/Documents/work/Todayswork/Auto Consolidated Tracker-1 v2.xlsx'
 sheetname = 'Spec Level'
 
+# pull data from specific columns, include header 
 spec = pd.read_excel(location,sheetname,header = 0,
               index_col= None,usecols="A,B,D,H,I,L"
               )
@@ -39,6 +40,7 @@ with pd.ExcelWriter(output_loc) as writer:
     new_spec.to_excel(writer, startrow=writer.sheets['Sheet1'].max_row,
                       startcol=1,index=False)
     writer.save()
+<<<<<<< HEAD
 
  ## reference from https://stackoverflow.com/questions/47737220/append-dataframe-to-excel-with-pandas
  ## undate multiple worksheets
@@ -48,3 +50,7 @@ writer.sheets = {ws.title: ws for ws in book.worksheets}
 for sheetname in writer.sheets:
     df1.to_excel(writer,sheet_name=sheetname, startrow=writer.sheets[sheetname].max_row, index = False,header= False)
 
+writer.save()
+=======
+    
+>>>>>>> 0ca17b18a0b754c4cb8666ccfd3877ccfe6d51cf
